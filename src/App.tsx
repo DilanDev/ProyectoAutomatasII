@@ -55,10 +55,10 @@ function App() {
         rule: validationResult.rule
       };
     });
-    
+
     //puntuacion final
     const finalScore = questionResults.filter(result => result.isValid).length;
-    
+
     setResults(questionResults);
     setScore(finalScore);
     setFeedback(getFeedbackMessage(finalScore));
@@ -84,8 +84,8 @@ function App() {
             <div>
               <CardTitle className="text-2xl">Validación de Preguntas WH en Inglés</CardTitle>
               <CardDescription>
-                {submitted 
-                  ? "Resultados de tu evaluación" 
+                {submitted
+                  ? "Resultados de tu evaluación"
                   : "Escribe 5 preguntas de tipo WH en inglés"}
               </CardDescription>
             </div>
@@ -94,14 +94,14 @@ function App() {
             </Button>
           </div>
         </CardHeader>
-        
+
         <CardContent>
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="test">Cuestionario</TabsTrigger>
               <TabsTrigger value="reference">Guía de Referencia</TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="test">
               {!submitted ? (
                 <>
@@ -126,24 +126,24 @@ function App() {
                         className="w-full"
                       />
                     </div>
-                    
+
                     <div className="flex justify-between">
-                      <Button 
-                        variant="outline" 
-                        onClick={handlePreviousQuestion} 
+                      <Button
+                        variant="outline"
+                        onClick={handlePreviousQuestion}
                         disabled={currentQuestionIndex === 0}
                       >
                         Anterior
                       </Button>
-                      
+
                       {currentQuestionIndex < 4 ? (
-                        <Button 
+                        <Button
                           onClick={handleNextQuestion}
                         >
                           Siguiente
                         </Button>
                       ) : (
-                        <Button 
+                        <Button
                           onClick={handleSubmit}
                           disabled={questions.some(q => !q)}
                         >
@@ -157,36 +157,33 @@ function App() {
                 <>
                   <div className="mb-6 text-center">
                     <h3 className="text-xl font-bold">Puntuación: {score} / 5</h3>
-                    <Alert className={`mt-4 ${
-                      score === 5 ? 'bg-green-50' : 
-                      score >= 3 ? 'bg-blue-50' : 
-                      'bg-amber-50'
-                    }`}>
+                    <Alert className={`mt-4 ${score === 5 ? 'bg-green-50' :
+                      score >= 3 ? 'bg-blue-50' :
+                        'bg-amber-50'
+                      }`}>
                       <AlertTitle>Resultado</AlertTitle>
                       <AlertDescription>{feedback}</AlertDescription>
                     </Alert>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {results.map((result, index) => (
-                      <div key={index} className={`p-3 rounded-md ${
-                        result.isValid ? 'bg-green-50' : 'bg-red-50'
-                      }`}>
+                      <div key={index} className={`p-3 rounded-md ${result.isValid ? 'bg-green-50' : 'bg-red-50'
+                        }`}>
                         <div className="flex items-center mb-1">
-                          <div className={`w-6 h-6 rounded-full mr-2 flex items-center justify-center ${
-                            result.isValid ? 'bg-green-500' : 'bg-red-500'
-                          } text-white`}>
+                          <div className={`w-6 h-6 rounded-full mr-2 flex items-center justify-center ${result.isValid ? 'bg-green-500' : 'bg-red-500'
+                            } text-white`}>
                             {result.isValid ? '✓' : '✗'}
                           </div>
                           <span className="flex-1 font-medium">{result.question}</span>
                         </div>
-                        
+
                         {result.isValid && result.rule && (
                           <div className="ml-8 text-sm text-gray-600">
                             <p>Patrón: {result.rule.pattern}</p>
                           </div>
                         )}
-                        
+
                         {!result.isValid && (
                           <div className="ml-8 text-sm text-red-600">
                             <p>La pregunta no cumple con ningún patrón de pregunta WH válido.</p>
@@ -198,7 +195,7 @@ function App() {
                 </>
               )}
             </TabsContent>
-            
+
             <TabsContent value="reference">
               <div className="space-y-4">
                 <Alert>
@@ -207,7 +204,7 @@ function App() {
                     Las preguntas WH en inglés son aquellas que comienzan con palabras como What, Where, When, Why, Who, How, etc.
                   </AlertDescription>
                 </Alert>
-                
+
                 <div>
                   <h3 className="text-lg font-medium mb-2">Patrones de Preguntas WH:</h3>
                   <div className="grid gap-2">
@@ -230,31 +227,32 @@ function App() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="text-lg font-medium mb-2">Ejemplos:</h3>
                   <div className="space-y-2">
-                  <div className="p-2 bg-gray-50 rounded-md border">
-                  <p><strong>What can you do?</strong> – Verbo modal "can"</p>
-                  </div>
-                  <div className="p-2 bg-gray-50 rounded-md border">
-                  <p><strong>Where should we go?</strong> – Verbo modal "should"</p>
-                  </div>
-                  <div className="p-2 bg-gray-50 rounded-md border">
-                  <p><strong>When will they arrive?</strong> – Verbo modal "will"</p>
-                  </div>
-                  <div className="p-2 bg-gray-50 rounded-md border">
-                  <p><strong>Why would she leave?</strong> – Verbo modal "would"</p>
-                  </div>
-                  <div className="p-2 bg-gray-50 rounded-md border">
-                  <p><strong>How might he react?</strong> – Verbo modal "might"</p>
-                  </div>
+                    <div className="p-2 bg-gray-50 rounded-md border">
+                      <p><strong>What can you do?</strong> - Verbo modal "can"</p>
+                    </div>
+                    <div className="p-2 bg-gray-50 rounded-md border">
+                      <p><strong>Where should we go?</strong> - Verbo modal "should"</p>
+                    </div>
+                    <div className="p-2 bg-gray-50 rounded-md border">
+                      <p><strong>When will they arrive?</strong> - Verbo modal "will"</p>
+                    </div>
+                    <div className="p-2 bg-gray-50 rounded-md border">
+                      <p><strong>Why would she leave?</strong> - Verbo modal "would"</p>
+                    </div>
+                    <div className="p-2 bg-gray-50 rounded-md border">
+                      <p><strong>How might he react?</strong> - Verbo modal "might"</p>
+                    </div>
                   </div>
                 </div>
+
             </TabsContent>
           </Tabs>
         </CardContent>
-        
+
         <CardFooter>
           {submitted && (
             <Button onClick={handleReset} className="w-full">
@@ -263,7 +261,7 @@ function App() {
           )}
         </CardFooter>
       </Card>
-      
+
       <Dialog open={showInstructions} onOpenChange={setShowInstructions}>
         <DialogContent className="sm:max-w-2xl">
           <Instructions onClose={() => setShowInstructions(false)} />
