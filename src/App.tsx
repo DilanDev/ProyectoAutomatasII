@@ -234,24 +234,23 @@ function App() {
                 <div>
                   <h3 className="text-lg font-medium mb-2">Ejemplos:</h3>
                   <div className="space-y-2">
-                    <div className="p-2 bg-gray-50 rounded-md border">
-                      <p><strong>What is your name?</strong> - Con verbo "to be" en presente</p>
-                    </div>
-                    <div className="p-2 bg-gray-50 rounded-md border">
-                      <p><strong>Where do you live?</strong> - Con auxiliar "do" en presente</p>
-                    </div>
-                    <div className="p-2 bg-gray-50 rounded-md border">
-                      <p><strong>When will you arrive?</strong> - Con verbo modal "will"</p>
-                    </div>
-                    <div className="p-2 bg-gray-50 rounded-md border">
-                      <p><strong>Why are you studying?</strong> - Presente continuo</p>
-                    </div>
-                    <div className="p-2 bg-gray-50 rounded-md border">
-                      <p><strong>How have you been?</strong> - Presente perfecto</p>
-                    </div>
+                  <div className="p-2 bg-gray-50 rounded-md border">
+                  <p><strong>What can you do?</strong> – Verbo modal "can"</p>
+                  </div>
+                  <div className="p-2 bg-gray-50 rounded-md border">
+                  <p><strong>Where should we go?</strong> – Verbo modal "should"</p>
+                  </div>
+                  <div className="p-2 bg-gray-50 rounded-md border">
+                  <p><strong>When will they arrive?</strong> – Verbo modal "will"</p>
+                  </div>
+                  <div className="p-2 bg-gray-50 rounded-md border">
+                  <p><strong>Why would she leave?</strong> – Verbo modal "would"</p>
+                  </div>
+                  <div className="p-2 bg-gray-50 rounded-md border">
+                  <p><strong>How might he react?</strong> – Verbo modal "might"</p>
+                  </div>
                   </div>
                 </div>
-              </div>
             </TabsContent>
           </Tabs>
         </CardContent>
