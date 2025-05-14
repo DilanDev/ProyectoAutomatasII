@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# ✅ Validador de Preguntas WH en Inglés
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React + TypeScript + Vite** y componentes de interfaz de usuario de **shadcn/ui**. Permite a los estudiantes escribir 5 preguntas WH en inglés y valida si cumplen con una estructura gramatical específica, basada en **preguntas con verbos modales** (como `can`, `will`, `should`, etc.).
 
-Currently, two official plugins are available:
+## 🎯 Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Validar preguntas en inglés del tipo:
 
-## Expanding the ESLint configuration
+> **WH-word + modal (can/will/should) + sujeto + verbo base + ?**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ejemplos válidos:
+- What can you do?
+- Where should we go?
+- When will they arrive?
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Tecnologías utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🧠 Funcionalidades
+
+- Permite al usuario ingresar 5 preguntas WH.
+- Valida que cada pregunta cumpla con la estructura asignada.
+- Asigna una puntuación de 0 a 5.
+- Muestra un mensaje motivacional basado en la calificación.
+- Indica visualmente cuáles preguntas son correctas e incorrectas.
+
+---
+
+## 🛠️ Instalación
+
+```bash
+# Clona el repositorio
+git clone https://github.com/tu-usuario/validador-wh.git
+cd validador-wh
+
+# Instala dependencias
+npm install
+
+# Ejecuta la app en modo desarrollo
+npm run dev
