@@ -248,7 +248,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-
+              </div>
             </TabsContent>
           </Tabs>
         </CardContent>
