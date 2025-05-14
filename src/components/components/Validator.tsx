@@ -13,7 +13,7 @@ export const auxiliaryVerbs: AuxiliaryVerbsType = {
     perfect: []
 };
 
-// Solo Regla 6: WH QUESTION + modal + sujeto + verbo base ?
+// Regla: WH QUESTION + modal + sujeto + verbo base ?
 export const grammarRules: GrammarRuleType[] = [
   {
     id: 6,
@@ -44,7 +44,7 @@ export const validateWHQuestion = (question: string): { isValid: boolean; rule?:
     return { isValid: false };
   }
 
-  const modalRule = grammarRules[0]; // Solo tenemos una
+  const modalRule = grammarRules[0];
   if (modalRule.validate(parts)) {
     return { isValid: true, rule: modalRule };
   }

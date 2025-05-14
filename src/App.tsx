@@ -24,28 +24,28 @@ function App() {
   const [activeTab, setActiveTab] = useState<string>("test");
   const [showInstructions, setShowInstructions] = useState<boolean>(false);
 
-  // Función para actualizar una pregunta
+  //actualizar una pregunta
   const handleQuestionChange = (index: number, value: string) => {
     const newQuestions = [...questions];
     newQuestions[index] = value;
     setQuestions(newQuestions);
   };
 
-  // Función para avanzar a la siguiente pregunta
+  //avanzar a la siguiente pregunta
   const handleNextQuestion = () => {
     if (currentQuestionIndex < 4) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
     }
   };
 
-  // Función para volver a la pregunta anterior
+  //volver a la pregunta anterior
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(prevIndex => prevIndex - 1);
     }
   };
 
-  // Función para evaluar todas las preguntas
+  //evaluar todas las preguntas
   const handleSubmit = () => {
     const questionResults: QuestionResultType[] = questions.map(question => {
       const validationResult = validateWHQuestion(question);
@@ -56,6 +56,7 @@ function App() {
       };
     });
     
+    //puntuacion final
     const finalScore = questionResults.filter(result => result.isValid).length;
     
     setResults(questionResults);
@@ -64,7 +65,7 @@ function App() {
     setSubmitted(true);
   };
 
-  // Función para reiniciar el cuestionario
+  //reiniciar el cuestionario
   const handleReset = () => {
     setQuestions(Array(5).fill(''));
     setResults([]);
