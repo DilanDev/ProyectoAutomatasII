@@ -39,8 +39,9 @@ Ejemplos válidos:
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/tu-usuario/validador-wh.git
-cd validador-wh
+git clone https://github.com/DilanDev/ProyectoAutomatasII
+
+cd ..
 
 # Instala dependencias
 npm install
