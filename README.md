@@ -41,7 +41,7 @@ Ejemplos válidos:
 # Clona el repositorio
 git clone https://github.com/DilanDev/ProyectoAutomatasII
 
-cd ..
+cd ProyectoAutomatasII
 
 # Instala dependencias
 npm install
