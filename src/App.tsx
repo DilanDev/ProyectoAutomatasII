@@ -78,7 +78,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <Card className="w-full max-w-2xl">
+      <div>
+        <img className='h-90 w-90 mr-8 shadow-2xl shadow-gray-500/50 rounded-md' src="/src/img/qr-code.png" alt="codigo qr de la apliacion desplegada" />
+      </div>
+      <Card className='w-full max-w-2xl shadow-lg shadow-gray-600/50'>
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>

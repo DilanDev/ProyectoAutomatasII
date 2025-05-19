@@ -33,7 +33,7 @@ export const grammarRules: GrammarRuleType[] = [
   }
 ];
 
-// Función para validar una pregunta WH con la única regla activa (modal)
+//Valida una pregunta WH con la regla
 export const validateWHQuestion = (question: string): { isValid: boolean; rule?: GrammarRuleType } => {
   const questionEndsWithQuestionMark = question.trim().endsWith('?');
   const cleanQuestion = question.replace(/[^\w\s]/gi, '').trim();
@@ -51,6 +51,8 @@ export const validateWHQuestion = (question: string): { isValid: boolean; rule?:
 
   return { isValid: false };
 };
+
+// Mensajes para púntuaciones
 
 export const getFeedbackMessage = (score: number): string => {
   if (score === 5) {
